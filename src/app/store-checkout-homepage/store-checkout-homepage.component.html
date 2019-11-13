@@ -1,0 +1,146 @@
+<!-- Top Navbar -->
+<nav class="navbar navbar-expand-md navbar navbar-light" style="background-color: #496584; height:90px">
+    <div class="navbar-collapse navbar navbar-expand-sm-md-lg">
+      <ul class="navbar-brand logo">
+          <a href="#">
+              <img src="../../assets/xfinityLogo.png" width="50" height="50" alt="">
+          </a>
+      </ul>
+      <ul class="navbar-nav navbar-center">
+          <li class="nav-item active">
+              <a class="nav-link" id="heading" href="#">xPOS Cloud<span class="sr-only">(current)</span></a>
+          </li>
+      </ul>
+      <ul class="nav navbar-nav ml-auto storeNumber">
+          <li><a class="storeNumber" href="#about">Store Number : 002</a></li>
+      </ul>
+  </div>
+</nav>
+<!-- -------------------Search Bar ------------------->
+<div class="row mi-5 mb-5 searchHead">
+    <div class="col-sm-8 col-md-8 col-lg-8">
+        <form class="form-inline  searchBox">
+            <mat-select class="form-control col-sm-10 col-md-10 col-lg-10 searchBar" placeholder="Item List"[(ngModel)]="selectedItem"
+                (selectionChange)="onChange()" [ngModelOptions]="{standalone: true}">
+                <mat-label>Select Items</mat-label>
+                <!-- <mat-option>None</mat-option> -->
+                <mat-option *ngFor="let item of dataItems" [value]="item.name">
+                    {{item.name}}
+                </mat-option>
+            </mat-select>
+        </form>
+    </div>
+    <!-- ---------------Total Display ----------- -->
+    <div class= "col-sm-4 col-md-4 col-lg-4 totalBox" >
+      <div class="container effect2" id="totalAmount">
+          <div class="row mx-2">
+              <div class="col-xs-12 col-sm-6 col-lg-8 textStyle">
+                  <p>Subtotal :</p>
+              </div>
+              <div class="col-sm-6 col-lg-4 textStyle">
+                  <p><b>${{subtotal | number:'1.2-2'}}</b></p>
+              </div>
+          </div>
+          <div class="row mx-2">
+              <div class="col-xs-12 col-sm-6 col-lg-8 textStyle">
+                  <p>Tax :</p>
+              </div>
+              <div class="col-sm-6 col-lg-4 textStyle">
+                  <p><b>${{tax | number:'1.2-2'}}</b></p>
+              </div>
+          </div>
+          <div class="row mx-2">
+              <div class="col-xs-12 col-sm-6 col-lg-6 textStyle1">
+                  <p> Total :</p>
+              </div>
+              <div class="col-sm-6 col-lg-6 textStyle1">
+                  <p><b>${{totalAmount | number:'1.2-2'}}</b></p>
+              </div>
+          </div>
+      </div>
+
+    </div>
+</div>
+<!------------ Item Selected Table ------------->
+<div *ngIf="isSelected">
+    <div class="row mx-5">
+        <div class="col-sm-8 col-md-8 col-lg-8 tableTop">
+            <p>Your Cart</p>
+        </div>
+        <div class="col-sm-4 col-md-4 col-lg-4 tableTop">
+            <p>Total Items : {{dataTable.length}}</p>
+        </div>
+    </div>
+
+    <div class="itemTable mx-5">
+        <table class="listItems" mat-table [dataSource]="dataTable" #mtable>
+            <ng-container matColumnDef="itemNumber">
+                <th mat-header-cell *matHeaderCellDef> ID </th>
+                <td mat-cell *matCellDef="let element; index as i"> {{i+1}} </td>
+            </ng-container>
+            <ng-container matColumnDef="name">
+                <th class="nameColumn" mat-header-cell *matHeaderCellDef> Name </th>
+                <td class="nameColumn" mat-cell *matCellDef="let element"> {{element.name}} </td>
+                <td mat-footer-cell *matFooterCellDef> Total </td>
+            </ng-container>
+            <ng-container matColumnDef="price">
+                <th mat-header-cell *matHeaderCellDef> Amount </th>
+                <td mat-cell *matCellDef="let element"> {{element.price | currency}} </td>
+                <td mat-footer-cell *matFooterCellDef> </td>
+            </ng-container>
+            <ng-container matColumnDef="Actions">
+                <th class="actionColumn" mat-header-cell *matHeaderCellDef> Action </th>
+                <td class="actionColumn close" mat-cell *matCellDef="let element;let i = index;" class="action-link">
+                    <button (click)="delete(element.itemNumber,i)" mat-icon-button color="warm">
+                        <mat-icon>delete_outline</mat-icon>
+                    </button>
+                </td>
+            </ng-container>
+            <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        </table>
+    </div>
+</div>
+<!------------------ footer Buttons ------------------>
+<footer>
+  <div class="modal-footer" style="margin-right:15px;">
+      <button type="button" class="btn btn-info circularButton employee" style="width:200px">Manager Override</button>
+      <button type="button" class="btn btn-success circularButton procced" style="width:200px"
+          [disabled]="disableButton" data-target="#fullHeightModalRight" data-toggle="modal">Proceed</button>
+  </div>
+</footer>
+<!-- ---------------Right Side Modal----------------- -->
+<div class="modal right fade" id="fullHeightModalRight" tabindex="-1" role="dialog" aria-labelledby="myModalLabel2">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+
+            <div class="modal-header" style="background-color: #efeded;" >
+                <!-- <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button> -->
+                <h4 class="modal-title" id="myModalLabel2">Order Summary</h4>
+            </div>
+
+            <div class="modal-body" id="rightModal">
+              <div class="row blocks">
+                <div class="col-sm-6 col-md-8 col-lg-8">SUBTOTAL:</div>
+                <div class="col-sm-6 col-md-4 col-lg-4">${{subtotal | number:'1.2-2'}}</div>
+              </div>
+              <div class="row blocks">
+                <div class="col-sm-6 col-md-8 col-lg-8">MDR DISCOUNT:</div>
+                <div class="col-sm-6 col-md-4 col-lg-4">$0.00</div>
+              </div>
+              <div class="row blocks">
+                <div class="col-sm-6 col-md-8 col-lg-8">ESTIMATED TAX:</div>
+                <div class="col-sm-6 col-md-4 col-lg-4">${{tax | number:'1.2-2'}}</div>
+              </div>
+              <div class="row blocks">
+                <div class="col-sm-6 col-md-8 col-lg-6 modalTotal"><b>TOTAL:</b></div>
+                <div class="col-sm-6 col-md-4 col-lg-6 modalTotal"><b>${{totalAmount | number:'1.2-2'}}</b></div>
+              </div>
+            </div>
+            <div class="modal-footer checkoutWindow">
+                <button type="button" class="btn btn-secondary circularButton closeButton" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-success circularButton checkoutButton" data-dismiss="modal" style="width:150px"(click)="paymentConfirmation()">Checkout</button>
+            </div>
+        </div>
+    </div>
+</div>

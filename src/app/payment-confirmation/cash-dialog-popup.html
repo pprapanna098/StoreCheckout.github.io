@@ -1,0 +1,47 @@
+<h3 mat-dialog-title>Enter Cash Amount</h3>
+<div mat-dialog-content>
+  <div class="dollarButton" style="padding-top:20px;">
+    <div class="row dollorOptions">
+      <div class="col-sm-3 col-md-3 col-lg-3 cashButtons" >
+          <button type="button" class="btn btn-outline-success circularButton" id="dollarButtons10" [mat-dialog-close]="data" (click)="data.cash='10'">$10</button>
+      </div>
+      <div class="col-sm-3 col-md-3 col-lg-3">
+          <button type="button" class="btn btn-outline-success circularButton" id="dollarButtons10"[mat-dialog-close]="data" (click)="data.cash='20'">$20</button>
+      </div>
+      <div class="col-sm-3 col-md-3 col-lg-3">
+          <button type="button" class="btn btn-outline-success circularButton" id="dollarButtons10" [mat-dialog-close]="data" (click)="data.cash='50'">$50</button>
+      </div>
+      <div class="col-sm-3 col-md-3 col-lg-3">
+          <button type="button" class="btn btn-outline-success circularButton" id="dollarButtons10" [mat-dialog-close]="data" (click)="data.cash='100'">$100</button>
+      </div>
+    </div>
+    <div class="row dollorOptions">
+
+      <div class="col-sm-3 col-md-3 col-lg-3">
+          <button type="button" class="btn btn-outline-success circularButton" id="dollarButtons10" [mat-dialog-close]="data" (click)="data.cash='250'">$250</button>
+      </div>
+      <div class="col-sm-3 col-md-3 col-lg-3">
+          <button type="button" class="btn btn-outline-success circularButton" id="dollarButtons10" [mat-dialog-close]="data" (click)="data.cash='500'">$500</button>
+      </div>
+      <div class="col-sm-3 col-md-3 col-lg-3">
+          <button type="button" class="btn btn-outline-success circularButton" id="dollarButtons10" [mat-dialog-close]="data" (click)="data.cash='1000'">$1000</button>
+      </div>
+      <div class="col-sm-3 col-md-3 col-lg-3">
+          <button type="button" class="btn btn-outline-success circularButton" id="dollarButtons10" [mat-dialog-close]="data" (click)="data.cash='2000'">$2000</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="amountBox">
+    <mat-form-field>
+      <input type="number" placeholder="Enter Amount" matInput [(ngModel)]="data.cash">
+    </mat-form-field>
+  </div>
+</div>
+
+<div class="modal-footer">
+  <button class="btn btn-outline-secondary" style="border-radius: 20px;" (click)="onNoClick() ">Cancel</button>
+  <button  class="btn btn-success" style="border-radius: 20px; width:80px;" [mat-dialog-close]="data" cdkFocusInitial>Save</button>
+</div>
+
+

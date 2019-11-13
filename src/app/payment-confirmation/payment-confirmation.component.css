@@ -1,0 +1,176 @@
+#heading{
+  font-size: 22px;
+  color: white;
+}
+.navbar-center {
+  padding: 0px 20px 0px;
+  position: absolute;
+  left: 47%;
+  transform: translatex(-50%);
+}
+.background{
+  background-color: wheat;
+}
+.circularButton {
+  border-radius: 20px;
+  box-shadow: 0px 8px 11px rgba(0, 0, 0, 0.14);
+}
+.topHeader{
+  text-align: right;
+  padding: 6px;
+  background-color: #aeaeae;
+}
+h4{
+  margin-top: 5px;
+  margin-right: 26px;
+  color: white;
+  font-size: 13px;
+}
+p{
+  font-size: 15px;
+  color: #14477d;
+}
+.selectButtons{
+  padding-bottom: 30px;
+  padding-left: 40px;
+  padding-right:40px;
+  border-color: white;
+  /* padding-right: 40%;
+  padding-left:; */
+}
+.topButton{
+  padding-top: 30px;
+}
+.storeNumber {
+  color: #486583;
+  background-color: #f3f3f3;
+  border-radius: 8px;
+  border:0;
+  width: 80px;
+}
+.backButton{
+  margin-top:10px;
+  padding-left: 0px;
+}
+.topHeading {
+  padding-top: 10px;
+  font-size: 20px;
+  color: #007bff;
+}
+.container{
+width: 100%;
+height: 100%;
+}
+footer{
+  position: fixed;
+  bottom:0;
+  width: 100%;
+  background-color: #dfdfdf;
+}
+#leftSidePage {
+  margin-top: 30px;
+  margin-right: 10px;
+  margin-left: 10px;
+  background-color: #f0f7ff;
+  padding: 30px;
+  width: 45%;
+  float: left;
+  border-radius: 10px;
+}
+#rightSidePage {
+  margin-top: 30px;
+  margin-right:10px;
+  margin-left:10px;
+  background-color: #f3f3f3; ;
+  padding: 30px;
+  width: 45%;
+  float: right;
+  border-radius: 10px;
+}
+.paymentMode{
+  padding-top:10px;
+  padding-bottom:10px;
+}
+.paymentButtons{
+  width:100%;
+  background-color: white;
+  border-radius: 15px;
+
+}
+.paymentImages{
+  padding-right:35px;
+  padding-top:7px;
+  padding-bottom:7px;
+  width:130px;
+}
+.paymentText{
+  font-size: 20px;
+  color: #075ba4;
+}
+.printOptions{
+  margin-top: 20px;
+}
+.voidButton{
+  position: fixed;
+  left: 30px;
+  float: left;
+}
+.cashDropdown{
+  margin: 0px;
+  padding: 10px 20px 20px 10px;
+}
+.leftSide, .rightSide{
+  padding-top: 10px;
+  padding-botton: 20px;
+}
+h1{
+  margin-top: 10px;
+  margin-bottom: 20px;
+  font-size: 28px;
+  text-align: center;
+  color: #075ba4;
+}
+.differenceAmount{
+  font-size: 20px;
+  color: rgb(5, 91, 164);
+}
+/* ---------------------------------------------------dialog CSS------------------------------- */
+
+h3{
+  text-align: center;
+  height: 40px;
+  border-radius: 10px;
+  padding-top: 3px;
+  color: #075ba4;
+  font-size: 1.7rem;
+}
+#dollarButtons10{
+  width: 70px;
+}
+.cashButton{
+  padding: 15px 15px 15px 15px;
+}
+.dollorOptions{
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+.amountBox{
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.paymentBtn{
+  width: 90px;
+  height:90px;
+  background-color: brown;
+  border-radius: 30%;
+  box-shadow: 0 5px 15px -5px #00000070;
+  color: blue;
+}
+/* --------------------Confirmation MODAL---------------- */
+.contentText{
+  padding-top:32px;
+  padding-bottom:40px;
+}
+::placeholder{
+  color:#979797;
+}

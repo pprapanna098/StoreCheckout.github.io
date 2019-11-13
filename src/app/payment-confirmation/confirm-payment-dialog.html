@@ -1,0 +1,37 @@
+<h2 mat-dialog-title>
+  <div class="row" style="margin-top: 3px;">
+    <div class="col-sm-2 col-md-2 col-lg-2" style="margin-left:40px;">
+      <img src="../../assets/tick-inside-circle.png" width="50px" height="50px"></div>
+    <div class="col-sm-8 col-md-8 col-lg-8" style="padding:0">
+      <h2 style="color: #075BA4">Payment Successful !</h2>
+    </div>
+  </div>
+</h2>
+<div mat-dialog-content class="contentText">
+  <p>Transaction with <strong>Reference number 00009767608678598</strong> is completed!</p>
+  <p> Please select the required receipt options or select NONE to exit.</p>
+  <div class="dollarButton">
+    <div class="row dollorOptions">
+      <div class="col-sm-4 col-md-4 col-lg-4 receiptButtons">
+        <input
+          type="email"
+          id="emailAddress"
+          class="btn btn-outline-success"
+
+          onfocus="this.placeholder=''"
+          onblur="this.placeholder='example@mail.com'"
+          style="width:160px;">
+        <label for="emailAddress"></label>
+      </div>
+      <div class="col-sm-4 col-md-4 col-lg-4 receiptButtons">
+        <button type="button" class="btn btn-outline-success" (click)="frontPrint()" [mat-dialog-close]="data" style="width:160px;">FRONT PRINT</button>
+        </div>
+      <div class="col-sm-4 col-md-4 col-lg-4 receiptButtons">
+        <button type="button" class="btn btn-outline-success" (click)="backPrint()" [mat-dialog-close]="data" style="width:160px;">BACK PRINT</button>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal-footer">
+    <button type="button" class="btn btn-dark" (click)="noneClick()" style="background-color: #055ba4">NONE</button>
+</div>

@@ -1,0 +1,82 @@
+<nav class="navbar navbar-expand-md navbar navbar-light" style="background-color: #496584; height:90px">
+    <div class="navbar-collapse navbar navbar-expand-sm-md-lg">
+      <ul class="backButton">
+        <button type="button" class="btn btn-light storeNumber" (click)="goBack()">Back</button>
+      </ul>
+      <ul class="navbar-nav navbar-center">
+        <li class="nav-item active">
+          <a class="nav-link heading" id="heading" href="#">xPOS Cloud<span class="sr-only">(current)</span></a>
+        </li>
+      </ul>
+      <ul class="nav navbar-nav ml-auto">
+        <li><a href="#about" style="color:white;">Store Number : 002</a></li>
+      </ul>
+    </div>
+</nav>
+<div class="topHeader">
+  <h4>Reference Number: 00009767608678598</h4>
+</div>
+
+<div class="container">
+  <div id="leftSidePage" style="height: 520px;" >
+    <div class="cashHeader mx-3">
+      <h1>Amount Details</h1>
+      <hr>
+    </div>
+    <div class="cashDropdown mx-3" >
+        <div class="row displayText">
+            <div class = "col-sm-6 col-md-6 col-lg-6 leftSide">Items :<hr></div>
+            <div class = "col-sm-6 col-md-6 col-lg-6 rightSide">{{dataTable.length}}<hr></div>
+          </div>
+      <div class="row">
+        <div class = "col-sm-6 col-md-6 col-lg-6 leftSide">Total Due :</div>
+        <div class = "col-sm-6 col-md-6 col-lg-6 rightSide"><b>${{totalAmount | number:'1.2-2'}}</b></div>
+      </div>
+      <div class="row">
+          <div class = "col-sm-6 col-md-6 col-lg-6 leftSide">Cash :<hr></div>
+          <div class = "col-sm-6 col-md-6 col-lg-6 rightSide"><b>${{cash | number:'1.2-2'}}</b></div>
+      </div>
+      <div class="row differenceAmount">
+          <div class = "col-sm-6 col-md-6 col-lg-6 leftSide">Change:</div>
+          <div class = "col-sm-6 col-md-6 col-lg-6 rightSide"><b>${{totalAmount - cash | number:'1.2-2'}}</b></div>
+      </div>
+    </div>
+  </div>
+
+  <div id="rightSidePage" style="height: 520px;">
+    <div class="paymentOptions">
+      <div class="cashHeader mx-3">
+          <h1>Payment  Method</h1>
+          <hr>
+      </div>
+      <div class="paymentMode">
+          <button type="button" (click)="cashMethod()" class="paymentButtons">
+            <img src="../../assets/cash.png" class="paymentImages">
+            <span class="paymentText">Cash</span>
+          </button>
+        </div>
+      <div class="paymentMode">
+        <button type="button" class="paymentButtons">
+          <img src="../../assets/shopping-store.png" class="paymentImages">
+          <span class="paymentText">Credit</span>
+        </button>
+      </div>
+      <div class="paymentMode">
+          <button type="button" class="paymentButtons">
+            <img src="../../assets/cheque.png" class="paymentImages">
+            <span class="paymentText">Check</span>
+          </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="modal-footer">
+    <div class="voidButton">
+      <button type="button" class="btn btn-light circularButton employee" (click)="voidTransaction()" style="width:80px">Void</button>
+    </div>
+      <button type="button" class="btn btn-info circularButton employee" style="width:120px">save</button>
+      <button type="button" class="btn btn-success circularButton" [disabled]="buttonDisable" (click)="confirmPayment()" style="width:200px">Make Payment</button>
+  </div>
+</footer>

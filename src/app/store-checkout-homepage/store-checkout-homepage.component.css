@@ -1,0 +1,286 @@
+#heading{
+  font-size: 22px;
+  color: white;
+}
+.logo{
+  padding-left: 0px;
+  padding-top: 20px;
+}
+#topBanner{
+  background-color: #4572a3;
+}
+.navbar-center {
+  padding: 0;
+  position: fixed;
+  left: 48%;
+  transform: translatex(-50%);
+}
+.storeNumber{
+  color: white;
+  padding: 40px 5px 0px;
+}
+.searchButton{
+  background-color: #DFEDFE;
+  margin-left: 10px;
+  height: 38px;
+  width: 20%;
+  border-radius: 20px;
+}
+.searchHead{
+  overflow: auto;
+  /* padding-right: 50px; */
+  padding-bottom: 10px;
+}
+.totalBox{
+  padding-right: 30px;
+  padding-left: 0px;
+}
+#totalAmount{
+  margin-top: 20px;
+  padding-top:20px;
+  padding-left:0;
+  background-color: #dfdfdf;
+  height:150px;
+  border-radius:10px;
+}
+.textStyle{
+  font-size: 16px;
+  font-weight: 500;
+  /* color: #054587; */
+}
+.textStyle1{
+  font-size: 30px;
+  color: #054587;
+}
+.effect2
+{
+  position: relative;
+}
+.effect2:before, .effect2:after
+{
+  z-index: -1;
+  position: absolute;
+  content: "";
+  bottom: 15px;
+  left: 10px;
+  width: 50%;
+  top: 80%;
+  max-width:300px;
+  background: #777;
+  -webkit-box-shadow: 0 15px 10px #777;
+  -moz-box-shadow: 0 15px 10px #777;
+  box-shadow: 0 15px 10px #777;
+  -webkit-transform: rotate(-3deg);
+  -moz-transform: rotate(-3deg);
+  -o-transform: rotate(-3deg);
+  -ms-transform: rotate(-3deg);
+  transform: rotate(-3deg);
+}
+.effect2:after
+{
+  -webkit-transform: rotate(3deg);
+  -moz-transform: rotate(3deg);
+  -o-transform: rotate(3deg);
+  -ms-transform: rotate(3deg);
+  transform: rotate(3deg);
+  right: 10px;
+  left: auto;
+}
+.searchBox{
+  width: 100%;
+  margin-left:70px;
+  margin-top: 80px;
+}
+.searchBar{
+  border-radius: 20px;
+  background-color: #ffffff;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.14);
+}
+.itemTable{
+  height: 500px;
+  overflow: scroll;
+}
+
+.totalAmount{
+  /* width:600px; */
+  padding: 10px 0px 0px 10px;
+  background-color:#ffffff;
+  border-radius: 20px;
+}
+.totalAmount{
+  marging-bottom: 40px;
+  margin-top: 40px;
+}
+.tableBody{
+  overflow: scroll;
+  /* height: 80%; */
+}
+.fixed-bottom{
+  /* padding-top: 80px; */
+  background-color: #efefef;
+}
+.listItems {
+  width: 100%;
+}
+.nameColumn{
+  width:40%;
+}
+.employeeDetail, .proccedButton{
+  padding-left: 20px;
+  padding-top: 30px;
+  padding-right: 30px;
+}
+.actionColumn{
+  width:10px;
+  padding-right:0px;
+}
+
+.tableTop{
+  font-size: 18px;
+  color: #054587;
+}
+.circularButton {
+  border-radius: 20px;
+  box-shadow: 0px 8px 11px rgba(0, 0, 0, 0.14);
+}
+.closeButton{
+    position: fixed;
+    left: 20px;
+    float: left;
+}
+.checkoutButtom{
+  right: 20px;
+  float: right;
+}
+.checkoutWindow{
+background-color: #dfdfdf;
+margin-bottom: 15px;
+margin-right:15px;
+}
+footer{
+  position: fixed;
+  bottom:15px;
+  width: 100%;
+  background-color: #dfdfdf;
+}
+h4{
+  color: #0281c0;
+  font-size: 1.9rem;
+}
+.blocks{
+  border-radius: 15px;;
+  border-width: 10px;
+  border-style: solid;
+  border-color: #e3e3e3;
+  padding: 10px 10px 10px 10px;
+  margin: 30px 5px 5px 5px;
+}
+#rightModal{
+  padding-right: 0px;
+  padding-left: 0px;
+  margin-right:15px;
+}
+
+.modal.left .modal-dialog,
+.modal.right .modal-dialog {
+  position: fixed;
+  margin: auto;
+  width: 320px;
+  height: 100%;
+  -webkit-transform: translate3d(0%, 0, 0);
+      -ms-transform: translate3d(0%, 0, 0);
+       -o-transform: translate3d(0%, 0, 0);
+          transform: translate3d(0%, 0, 0);
+}
+
+.modal.left .modal-content,
+.modal.right .modal-content {
+  height: 100%;
+  overflow-y: auto;
+}
+
+.modal.left .modal-body,
+.modal.right .modal-body {
+  padding: 15px 15px 80px;
+}
+
+/*Left*/
+.modal.left.fade .modal-dialog{
+  left: -320px;
+  -webkit-transition: opacity 0.3s linear, left 0.3s ease-out;
+     -moz-transition: opacity 0.3s linear, left 0.3s ease-out;
+       -o-transition: opacity 0.3s linear, left 0.3s ease-out;
+          transition: opacity 0.3s linear, left 0.3s ease-out;
+}
+
+.modal.left.fade.in .modal-dialog{
+  left: 0;
+}
+
+/*Right*/
+.modal.right.fade .modal-dialog {
+  right: -320px;
+  -webkit-transition: opacity 0.3s linear, right 0.3s ease-out;
+     -moz-transition: opacity 0.3s linear, right 0.3s ease-out;
+       -o-transition: opacity 0.3s linear, right 0.3s ease-out;
+          transition: opacity 0.3s linear, right 0.3s ease-out;
+}
+
+.modal.right.fade.in .modal-dialog {
+  right: 0;
+}
+
+/* ----- MODAL STYLE ----- */
+.modal-content {
+  position: bottom;
+  border-radius: 0;
+  border: none;
+}
+
+.modal-header {
+  border-bottom-color: #EEEEEE;
+  background-color: #FAFAFA;
+}
+.modalTotal{
+  font-size: 20px;
+  color: #0081c0;
+  padding-left: 0;
+}
+
+/* ----- v CAN BE DELETED v ----- */
+body {
+background-color: #78909C;
+}
+
+.demo {
+padding-top: 60px;
+padding-bottom: 110px;
+}
+
+.btn-demo {
+margin: 15px;
+padding: 10px 15px;
+border-radius: 0;
+font-size: 16px;
+background-color: #FFFFFF;
+}
+
+.btn-demo:focus {
+outline: 0;
+}
+
+.demo-footer {
+position: fixed;
+bottom: 0;
+width: 100%;
+padding: 15px;
+background-color: #212121;
+text-align: center;
+}
+
+.demo-footer > a {
+text-decoration: none;
+font-weight: bold;
+font-size: 16px;
+color: #fff;
+}
